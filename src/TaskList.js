@@ -1,6 +1,7 @@
 import React from 'react';
 import TaskItem from './TaskItem';
 import CompletedTaskItem from './CompletedTaskItem';
+import { Route, Link, Switch } from 'react-router-dom'
 
 const TaskList = (props) => {
   console.log(props.toDo)
@@ -15,14 +16,8 @@ const TaskList = (props) => {
 
   return(
     <div>
-      <h2>To Do:</h2>
-        <ul>
-          {taskItems}
-        </ul>
-      <h2>Completed:</h2>
-        <ul>
-          {completedTaskItems}
-        </ul>
+      <Route exact path="/todo" render={(props) => <ul> {taskItems} </ul>}/>
+      <Route exact path="/completed" render={(props) => <ul> {completedTaskItems} </ul>}/>
 
     </div>
   )

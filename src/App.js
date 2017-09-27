@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TaskContainer from './TaskContainer';
+import Nav from './Nav'
+import { Route } from 'react-router-dom'
 
 class App extends Component {
   render() {
@@ -11,6 +13,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
+          <Nav />
           <TaskContainer />
       </div>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 import TaskForm from './TaskForm'
 import TaskList from './TaskList'
+import { Route, Link, Switch } from 'react-router-dom'
 
 class TaskContainer extends React.Component {
 
@@ -36,7 +37,7 @@ class TaskContainer extends React.Component {
   render(){
     return(
       <div>
-        <TaskForm createTask={this.addTask}/>
+        <Route exact path="/" render={(props) => <TaskForm createTask={this.addTask} {...props}/>}/>
         <TaskList toDo={this.state.tasksToDo} completed={this.state.completedTasks} onComplete={this.markCompleted}/>
       </div>
 
